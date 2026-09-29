@@ -39,7 +39,7 @@ const PILLARS: Pillar[] = [
   {
     id: "03",
     category: "",
-    title: "s neuroarchitecture style or science?",
+    title: "Is Neuroarchitecture Style or Science?",
     description:
       "It’s both. Neuroarchitecture blends the science of how humans respond to their environment with thoughtful design and aesthetics. Our warm modern homes feel timeless because they reflect the way humans naturally perceive space, light, and materials. When design resonates with physiology, architecture becomes more than style—it supports how we live, think, and feel.",
     image: img3,
