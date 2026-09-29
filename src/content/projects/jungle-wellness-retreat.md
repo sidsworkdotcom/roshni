@@ -1,28 +1,29 @@
 ---
-title: "Jungle Wellness Retreat"
-subtitle: "Where architecture dissolves into the jungle canopy"
-description: "A biophilic wellness retreat in the Philippines, with sinuous architecture around a natural spring, floating boardwalks and living-roof villas."
-location: "Philippines"
-category: "Wellness"
+title: "Wellness retreat"
+description: "The Wellness Retreat Located in the Phillipines is a sanctuary designed to quiet the mind and re-center the spirit."
+location: "Phillipines"
+category: ""
 order: 9
 cover: "/images/projects/wellness-retreat/cover.jpg"
 gallery: []
 ---
 
-This wellness retreat in the Philippines is a sanctuary designed to quiet the mind and re-centre the spirit. Tucked deep within dense, untouched tropical jungle, the project moves away from rigid structures towards fluid, sinuous architecture that mirrors the organic flow of water and topography.
+Where Architecture Dissolves into the Jungle Canopy
 
-At its heart, the design explores the balance between radical openness and complete immersion, offering a luxury wellness experience rooted in biophilic principles.
+The Wellness Retreat Located in the Phillipines is a sanctuary designed to quiet the mind and re-center the spirit. Tucked deep within a dense, untouched tropical jungle, the project moves away from rigid structures to embrace fluid, sinuous architecture that mimics the organic flow of water and topography.
 
-## Master Plan: The Fluid Mandala
+At its heart, the design explores the delicate balance between radical openness and complete immersion, providing a luxury wellness experience rooted deeply in biophilic principles.
 
-The layout is organised around a pristine central natural spring and reflection pool.
+## Architectural Master Plan: The Fluid Mandala
 
-- **The Core Shala:** suspended over the water, the main wellness pavilion is the spiritual and physical centre of the site.
-- **Curvilinear Connections:** floating timber boardwalks loop gracefully through the landscape, avoiding destructive grading and leaving the jungle floor undisturbed.
-- **Biomorphic Villas:** radiating outward from the water, ultra-private guest villas have organic, undulating living roofs with integrated skylights, camouflaging them from above so they dissolve into the canopy.
+The resort's layout is designed around a pristine, central natural spring and reflection pool.
 
-## The Interior Experience
+- The Core Shala: Suspended elegantly over the water sits the main wellness pavilion, acting as the spiritual and physical center of the site.
+- Curvilinear Connections: Guests navigate the sanctuary via floating timber boardwalks that loop gracefully through the landscape, eliminating the need for destructive grading and leaving the jungle floor undisturbed.
+- Biomorphic Villas: Radiating outward from the water are ultra-private guest sanctuaries. Their organic, undulating roofs are topped with living greenery and integrated skylights, completely camouflaging the structures from above and ensuring they seamlessly dissolve into the surrounding forest canopy.
 
-- **The Vaulted Canopy:** an undulating micro-cement vault casts soft shadows that echo the movement of the trees outside. Its texture is raw yet refined.
-- **Framed Wilderness:** floor-to-ceiling timber-framed glazing opens panoramic views of the lagoon and distant villas, dissolving the boundary between indoor practice and outdoor wilderness.
-- **Restrained Palette:** warm local hardwoods, smooth organic plaster, and natural woven elements are chosen to maximise mental clarity.
+## The interior experiences
+
+- The Vaulted Canopy: The ceiling features a dramatic, undulating concrete or micro-cement vault, casting soft shadows that mirror the movement of the trees outside. Its texture is raw yet incredibly refined.
+- Massive, floor-to-ceiling timber glass facades frame panoramic views of the central lagoon and distant jungle villas. The boundaries between indoor practice and outdoor wilderness disappear entirely.
+- The material palette is intentionally restrained to maximize mental clarity—warm local hardwoods underfoot, smooth organic plaster walls, and natural woven elements.

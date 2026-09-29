@@ -1,12 +1,10 @@
 ---
 title: "Pembridge Villas"
 description: ""
-location: "London"
-category: "Residential UK"
+location: ""
+category: "Residential Uk projects"
 order: 5
 draft: true
 cover: ""
 gallery: []
 ---
-
-Awaiting project description and images from the client.

@@ -1,21 +1,21 @@
 ---
-title: "St John's Wood House Renovation"
-description: "Renovation and extension of a semi-detached family home in the St John's Wood Conservation Area, designed for entertaining and long-term living."
-location: "St John's Wood, London"
-category: "Residential UK"
+title: "House renovation St Johns Wood"
+description: "The project involves the comprehensive renovation and extension of a semi-detached house located within St Johns wood Conservation Area, requiring a sensitive and considered design approach."
+location: "St Johns Wood, London"
+category: "Residential Uk projects"
 order: 2
 cover: "/images/projects/st-johns-wood/cover.jpg"
 gallery: []
 ---
 
-The project involves the comprehensive renovation and extension of a semi-detached house within the St John's Wood Conservation Area, requiring a sensitive and considered design approach. The scheme was carefully developed through the planning process and refined during detailed design to respect the character of its context while meeting the evolving needs of modern family life.
+The project involves the comprehensive renovation and extension of a semi-detached house located within St Johns wood Conservation Area, requiring a sensitive and considered design approach. The scheme has been carefully developed through the planning process and refined during detailed design to respect the character of its context while meeting the evolving needs of modern family life.
 
-The design adopts a timeless architectural language, balancing traditional proportions with contemporary interventions that will age gracefully. Materials have been selected for their durability and understated quality, ensuring the house remains relevant and robust for long-term living.
+The design adopts a timeless architectural language, balancing traditional proportions with contemporary interventions that will age gracefully over time. Materials have been selected for their durability and understated quality, ensuring the house remains both relevant and robust for long-term living.
 
-At ground floor level, the rear extension creates a generous, light-filled open-plan space that forms the heart of the home. Designed for a family that enjoys entertaining, it connects the living spaces seamlessly and has a strong relationship with the garden. Large openings bring in natural light and enable fluid indoor–outdoor living.
+At ground floor level, the rear extension creates a generous, light-filled open-plan space that forms the heart of the home. This area is designed to support a family that enjoys entertaining, with a seamless connection between living spaces, and a strong relationship to the garden. Large openings enhance natural light and enable fluid indoor-outdoor living.
 
-The utilities balance everyday function with hosting, incorporating both a "show kitchen" and a separate "wet kitchen". This dual arrangement allows efficient day-to-day use while keeping the main entertaining space refined and uncluttered.
+The utilities are carefully considered to balance everyday functionality with hosting requirements, incorporating both a ‘show kitchen’ and a separate ‘wet kitchen’. This dual arrangement allows for efficient day-to-day use while maintaining a refined and uncluttered primary entertaining space.
 
-Internally, the layout has been reconfigured to improve flow, functionality, and spatial clarity. The design prioritises adaptability, allowing the home to evolve with the family over time. Careful detailing and a restrained material palette create a cohesive and enduring interior.
+Internally, the layout has been reconfigured to improve flow, functionality, and spatial clarity. The design prioritises adaptability, allowing the home to evolve alongside the family’s needs over time. Carefully considered detailing and a restrained material palette contribute to a cohesive and enduring interior environment.
 
-The result is a refined family home that respects its conservation setting while offering a contemporary standard of living suited to both everyday life and social gatherings.
+Overall, the proposal delivers a refined and enduring family home that respects its conservation setting while offering a contemporary standard of living suited to both everyday life and social gatherings.

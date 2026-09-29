@@ -1,14 +1,14 @@
 import dynamic from "next/dynamic";
-import type { Metadata } from "next";
-
 const Hero = dynamic(() => import("./_components/Hero"));
 const Approach = dynamic(() => import("./_components/Approach"));
 const Quote = dynamic(() => import("./_components/Quote"));
 
+import type { Metadata } from "next";
+
 export const metadata: Metadata = {
   title: "Roshni Design Studio | London Residential & Wellness Architects",
   description:
-    "UK architectural practice designing private homes, wellness spaces, and retreats in London and internationally, rooted in light, proportion, and materiality.",
+    "London-based architectural practice designing private homes, wellness retreats, and international residential projects with a focus on light, proportion, and wellbeing.",
   keywords: [
     "London residential architect",
     "Wellness architecture UK",

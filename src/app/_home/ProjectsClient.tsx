@@ -18,8 +18,8 @@ export default function ProjectsClient({ items }: { items: ProjectItem[] }) {
               Selected Works
             </h2>
             <p className="text-primary-foreground/80 mx-auto max-w-md text-base leading-relaxed font-light">
-              Homes, retreats, and communities shaped by light, landscape, and
-              wellbeing.
+              A curation of projects defined by their relationship to light,
+              site, and serenity.
             </p>
           </div>
         </div>
@@ -32,7 +32,7 @@ export default function ProjectsClient({ items }: { items: ProjectItem[] }) {
       </div>
       <div className="mx-auto mt-16 w-max lg:mt-24">
         <Link href="/projects">
-          <Button variant="outline">View All Projects</Button>
+          <Button variant={"outline"}>View More Projects</Button>
         </Link>
       </div>
     </section>

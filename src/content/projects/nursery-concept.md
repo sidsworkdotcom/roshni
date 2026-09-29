@@ -1,12 +1,11 @@
 ---
-title: "Nursery Concept"
-description: "A multi-sensory daycare centre with a curved plan, natural timber and a central play street, designed for children's holistic development."
-category: "Education"
+title: "Nursery concept"
+description: "This daycare centre provides a nurturing and multi-sensory environment crafted for children's holistic development."
+location: ""
+category: ""
 order: 8
 cover: "/images/projects/nursery/cover.jpg"
 gallery: []
 ---
 
-This daycare centre provides a nurturing, multi-sensory environment designed for children's holistic development. A curved plan and abundant natural wood make the space feel immediately welcoming and safe. A central "play street" encourages exploration and social interaction through imaginative play houses, ball pits, and cosy, organic reading nooks.
-
-Visual connections across a dramatic double-height void enhance transparency, safety, and operational flow between the infant, toddler, and library zones. A palette of sage green, orange, and textured terrazzo floors creates a calm yet stimulating atmosphere, blending architectural creativity with practical needs in a setting where young minds can thrive.
+This daycare centre provides a nurturing and multi-sensory environment crafted for children's holistic development. Utilizing a curved plan and abundant natural wood textures, the space immediately feels welcoming and safe, with a central "play street" that encourages exploration and social interaction through imaginative play houses, ball pits, and cozy, organic reading nooks. Key to the design's success are strategic visual connections across a dramatic double-height void, which enhances transparency, safety, and operational flow between spaces like the dedicated infant, toddler, and library zones. A sophisticated palette of sage greens, oranges, and textured terrazzo floors fosters a calm yet stimulating atmosphere, blending architectural creativity with practical needs to create an ideal setting where young minds can thrive.
