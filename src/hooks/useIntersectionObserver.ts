@@ -1,0 +1,43 @@
+// Observes the intersection of an element with the viewport.
+
+import { useEffect, useState } from "react";
+
+export function useIntersectionObserver(
+  ref: React.RefObject<Element>,
+  options?: IntersectionObserverInit
+): boolean {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible(entry.isIntersecting);
+    }, options);
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, [ref, options]);
+
+  return isVisible;
+}
+
+// USAGE EXAMPLE:
+
+// const ref = useRef<HTMLDivElement>(null);
+// const isVisible = useIntersectionObserver(ref);
+
+// // log the visibility
+// useEffect(() => {
+//   console.log("Visible", isVisible);
+// }, [isVisible]);
+
+// return (
+//   <div>
+//     <div style={{ height: "150vh" }} />
+//     <div ref={ref}>{isVisible ? "Visible" : "Not Visible"}</div>
+//   </div>
+// );
