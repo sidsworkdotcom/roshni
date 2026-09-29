@@ -17,7 +17,6 @@ const FALLBACK_IMAGES = [
 export type Project = {
   slug: string;
   title: string;
-  subtitle?: string;
   description: string;
   location?: string;
   category?: string;
@@ -28,29 +27,37 @@ export type Project = {
   draft?: boolean;
   cover?: string;
   gallery: string[];
-  drawings: { src: string; label: string }[];
-  highlights: { title: string; items: string[] }[];
   content: string;
 };
 
 const exists = (src?: string) =>
   !!src && fs.existsSync(path.join(publicDir, src));
 
+function readImages(slug: string): string[] {
+  const dir = path.join(publicDir, "images/projects", slug);
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((f) => /\.(webp|jpe?g|png|avif)$/i.test(f))
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+    .map((f) => `/images/projects/${slug}/${f}`);
+}
+
 export function getProject(slug: string): Project | null {
   const file = path.join(contentDir, `${slug}.md`);
   if (!fs.existsSync(file)) return null;
 
   const { data, content } = matter(fs.readFileSync(file, "utf8"));
+  const images = readImages(slug);
+  const cover = exists(data.cover) ? (data.cover as string) : images[0];
 
   return {
     ...data,
     slug,
     title: data.title ?? "Untitled Project",
     description: data.description ?? "",
-    cover: exists(data.cover) ? data.cover : undefined,
-    gallery: (data.gallery ?? []).filter(exists),
-    drawings: (data.drawings ?? []).filter((d: { src: string }) => exists(d.src)),
-    highlights: data.highlights ?? [],
+    cover,
+    gallery: images.filter((src) => src !== cover),
     content
   };
 }
