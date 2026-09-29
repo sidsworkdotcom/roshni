@@ -5,9 +5,9 @@ import { StaticImageData } from "next/image";
 import img1 from "../../../public/images/pillar1.webp";
 import img2 from "../../../public/images/pillar2.webp";
 import img3 from "../../../public/images/pillar3.webp";
-import img4 from "../../../public/images/pillar4.webp";
 import PillarsMobile from "./PillarsMobile";
 import PillarsStack from "./PillarsStack";
+
 export interface Pillar {
   id: string;
   category: string;
@@ -20,45 +20,35 @@ export interface Pillar {
 const PILLARS: Pillar[] = [
   {
     id: "01",
-    category: "Residential thinking",
-    title: "Everything begins with the logic of a home.",
+    category: "Spatial Layouts",
+    title: "Layouts that calm the mind and invite movement.",
     description:
-      "Even when designing retreats, wellness spaces, or international developments, we apply the sensitivity of residential architecture — proportion, human scale, natural light, and spatial clarity.\n\nHomes teach us how people truly live. How they move. Where they pause. How privacy and connection coexist.\n\nThis residential foundation allows larger or more complex projects to retain intimacy, comfort, and emotional intelligence.",
+      "Our spaces are thoughtfully crafted to enhance cognitive wellbeing. Drawing on principles from neuroarchitecture and environmental psychology, we design room layouts, sightlines, and circulation patterns that reduce cognitive overload, foster calm, and promote intuitive movement throughout the home.\n\nFrom open yet cosy layouts and visual connections to nature, to ergonomic furniture, active circulation paths, and visible stairs, every element encourages subtle daily movement. Research in neuroscience and behavioural studies shows that integrating light physical activity into everyday routines can improve cognition, reduce stress, and support emotional resilience (Ulrich, 1984; Kaplan & Kaplan, 1989).",
     image: img1,
-    alt: "Residential architecture details"
+    alt: "Open-plan home with a visible stair and views to the garden"
   },
   {
     id: "02",
-    category: "Neuroarchitecture & Wellbeing",
-    title: "We design for the nervous system, not just the eye.",
+    category: "Neuro-Aesthetic Materials & Finishes",
+    title: "Natural materials that support mental and physical wellness.",
     description:
-      "Informed by principles of neuroarchitecture, our spaces are shaped to reduce stress, support focus, and enhance emotional balance. Spatial legibility, natural light, rhythm, and material texture all influence how a space is experienced physiologically.\n\nArchitecture has the power to calm or overwhelm. We choose calm.\n\nThe result is environments that feel intuitive, grounded, and restorative — designed not only for immediate beauty, but for long-term wellbeing.",
+      "In neuroarchitecture, the choice of materials can significantly affect health and wellbeing. Natural materials such as wood, stone, and clay have been shown to reduce stress, lower blood pressure, and improve mood, while tactile surfaces engage the senses and create a sense of comfort.\n\nStudies have found that environments with natural textures and finishes can lower cortisol levels, enhance cognitive performance, and promote restorative states in both homes and workplaces (Kellert & Calabrese, 2015; Joye & van den Berg, 2011). By carefully selecting materials, we create spaces that actively support wellbeing.",
     image: img2,
-    alt: "Neuroarchitecture principles"
+    alt: "Close-up of natural wood, stone and clay textures"
   },
   {
     id: "03",
-    category: "Materiality & Atmosphere",
-    title: "Materials are never decorative decisions. They shape atmosphere.",
+    category: "Style or Science?",
+    title: "Is neuroarchitecture style or science? It's both.",
     description:
-      "We work with restrained palettes and tactile surfaces that feel natural, balanced, and enduring. Texture, tone, weight, and light are carefully considered to create environments that feel composed rather than imposed.\n\nAtmosphere emerges from proportion, shadow, detail, and restraint. Our aim is not spectacle. It is depth.",
+      "Neuroarchitecture blends the science of how humans respond to their environment with thoughtful design and aesthetics. Our warm, modern homes feel timeless because they reflect the way people naturally perceive space, light, and materials.\n\nWhen design resonates with physiology, architecture becomes more than style. It supports how we live, think, and feel.",
     image: img3,
-    alt: "Tactile materials and textures"
-  },
-  {
-    id: "04",
-    category: "Clarity & Continuity",
-    title: "Good architecture provides clarity — in both design and process.",
-    description:
-      "From early feasibility to construction, we guide each project with a clear architectural direction and thoughtful coordination. This continuity ensures that the original intent remains intact from concept through completion.\n\nCalm design requires a calm process.",
-    image: img4,
-    alt: "Blueprint and architectural process"
+    alt: "Warm modern interior with soft daylight and curved forms"
   }
 ];
 
 export default function Pillars() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
-
   return isDesktop ? (
     <PillarsStack pillars={PILLARS} />
   ) : (

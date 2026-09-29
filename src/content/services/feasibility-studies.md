@@ -1,45 +1,45 @@
 ---
-title: "Architectural Feasibility Studies London — Know Before You Buy"
-description: "Understand your site's full potential before you commit. Our pre-purchase feasibility studies cover planning constraints, space options, and budget guidance for London properties."
+title: "Pre-Purchase Feasibility Studies — Know Before You Buy | Roshni Studio"
+description: "Understand what's possible before you commit to a property. Opportunities, constraints, space options and budget guidance for residences, retreats and resorts."
 ---
 
 # Pre-Purchase Feasibility
 
 **Buy with clarity. Design with confidence.**
 
-Buying a property is one of the biggest decisions you'll make. Before you commit, it helps to know exactly what you're buying into.
+A pre-purchase feasibility study helps you understand what's possible _before_ you commit to a property. We review the site and your goals, identify opportunities and constraints, and outline a clear direction, so you can make a confident, informed decision.
 
-A pre-purchase feasibility study gives you an honest, architectural view of what's possible — the opportunities, the risks, and the smartest path forward — so you can make a confident decision backed by expert insight.
+**Ideal for:** luxury residences, wellness retreats, boutique resort projects, and high-value renovations.
 
 ---
 
-## What You'll Receive
+## What You'll Get
 
-- **Feasibility overview** — what can realistically be achieved on the site
-- **Opportunity & risk assessment** — planning constraints, site access, services, budget sensitivity
-- **Space planning options** — how the layout could work for your needs
-- **Massing & concept direction** — scale, footprint, and key design moves
-- **Indicative budget & timeline guidance** — high-level estimates to frame your thinking
-- **Next-step roadmap** — design phases, approvals, and consultant requirements
+- **Feasibility overview:** what can realistically be achieved on the site
+- **Opportunity & risk assessment:** planning, site constraints, access, services, budget sensitivity
+- **High-level space planning options:** how the layout could work
+- **Massing & concept direction:** scale, footprint, key design moves
+- **Indicative budget & timeline guidance:** high-level, not a final quote
+- **Next-step roadmap:** design phases, approvals, and consultant needs if you proceed
 
 ---
 
 ## How It Works
 
-| Step                       | What Happens                                                  |
-| -------------------------- | ------------------------------------------------------------- |
-| **Discovery Call**         | We discuss your brief, lifestyle goals, and timeline          |
-| **Site & Document Review** | We review the agent pack, plans, photos, and planning context |
-| **Feasibility Study**      | We produce options and clear recommendations                  |
-| **Presentation & Q&A**     | We walk you through findings and agree next steps             |
+| Step                            | What Happens                                       |
+| ------------------------------- | -------------------------------------------------- |
+| **Discovery Call**              | Your brief, lifestyle or brand goals, and timeline |
+| **Site & Documentation Review** | Agent pack, drawings, photos, and planning context |
+| **Feasibility Study**           | Options and key recommendations                    |
+| **Presentation & Q&A**          | A walkthrough of findings and clear next steps     |
 
 ---
 
 ## What We Need From You
 
-- Property address and listing details
-- Any available plans, surveys, or agent packs
-- Your wishlist — rooms, style, wellness needs, or specific requirements
+- Property address or location, and any listing details
+- Any available plans, surveys, or agent pack
+- Your wishlist: rooms, style, wellness requirements, resort amenities
 - Your target budget range and ideal timeline
 
 ---
@@ -47,15 +47,9 @@ A pre-purchase feasibility study gives you an honest, architectural view of what
 ## By the End, You'll Know
 
 - Whether the property supports your vision
-- What compromises (if any) are likely
+- What compromises, if any, are likely
 - The smartest path forward
 
 ---
 
-## Ideal For
-
-Luxury residences, wellness retreats, boutique resort projects, and high-value renovations.
-
----
-
-> **Explore a property before you buy.** [Commission a feasibility study →](#)
+> **Explore a property before you buy.** [Commission a feasibility study →](/contact)
