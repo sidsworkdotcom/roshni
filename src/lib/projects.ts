@@ -25,6 +25,7 @@ export type Project = {
   collaborator?: string;
   order?: number;
   draft?: boolean;
+  heroFit?: "landscape" | "full";
   cover?: string;
   gallery: string[];
   content: string;
