@@ -71,7 +71,40 @@ export default async function ServicePage({ params }: Props) {
           <span className="bg-primary block h-px w-16" />
         </div>
       </section>
+           {/* ── Service image ── */}
+      {service.image && (
+        <section className="container mx-auto px-6 md:px-12">
+          <div className="mx-auto aspect-[16/9] max-w-6xl overflow-hidden">
+            <img
+              src={service.image}
+              alt={heroTitle}
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </section>
+      )}
 
+      {/* ── Extra images ── */}
+      {service.extraImages.length > 0 && (
+        <section className="container mx-auto px-6 pt-6 md:px-12 md:pt-8">
+          <div
+            className={`mx-auto grid gap-6 ${
+              service.extraImages.length > 1
+                ? "max-w-6xl md:grid-cols-2"
+                : "max-w-4xl"
+            }`}
+          >
+            {service.extraImages.map((src, i) => (
+              <img
+                key={src}
+                src={src}
+                alt={`${heroTitle} ${i + 2}`}
+                className="h-auto w-full"
+              />
+            ))}
+          </div>
+        </section>
+      )}
       {/* ── Body Content ── */}
       <section className="">
         <div className="container mx-auto px-6 py-20 md:px-12 md:py-28">

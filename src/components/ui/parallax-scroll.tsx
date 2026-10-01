@@ -1,11 +1,11 @@
 "use client";
-import { ArrowUpRight } from "lucide-react";
-import { motion, useScroll, useTransform } from "motion/react";
-import Link from "next/link";
-import { useRef } from "react";
 
 import { cn } from "@/lib/utils";
+import { ArrowUpRight } from "lucide-react";
+import { motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
+import { useRef } from "react";
 
 export interface ProjectItem {
   src: string;
@@ -20,7 +20,7 @@ export const ParallaxScroll = ({
   images: ProjectItem[];
   className?: string;
 }) => {
-  const gridRef = useRef<any>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: gridRef,
     offset: ["start end", "end start"]
@@ -29,43 +29,26 @@ export const ParallaxScroll = ({
   const translateFirst = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const translateSecond = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const translateThird = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const translates = [translateFirst, translateSecond, translateThird];
 
-  // const third = Math.ceil(images.length / 3);
-
-  const firstPart = images.slice(0, 2);
-  const secondPart = images.slice(3, 7);
-  const thirdPart = images.slice(7, 10);
+  // Deal projects out evenly: 1st -> col 1, 2nd -> col 2, 3rd -> col 3, 4th -> col 1 ...
+  const columns: ProjectItem[][] = [[], [], []];
+  images.forEach((item, i) => columns[i % 3].push(item));
 
   return (
     <div className={cn("w-full items-start", className)} ref={gridRef}>
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-4 px-4 py-40 md:grid-cols-2 lg:grid-cols-3">
-        <div className="grid gap-4">
-          {firstPart.map((el, idx) => (
-            <ProjectCard
-              key={"grid-1" + idx}
-              project={el}
-              translateY={translateFirst}
-            />
-          ))}
-        </div>
-        <div className="grid gap-4">
-          {secondPart.map((el, idx) => (
-            <ProjectCard
-              key={"grid-2" + idx}
-              project={el}
-              translateY={translateSecond}
-            />
-          ))}
-        </div>
-        <div className="grid gap-4">
-          {thirdPart.map((el, idx) => (
-            <ProjectCard
-              key={"grid-3" + idx}
-              project={el}
-              translateY={translateThird}
-            />
-          ))}
-        </div>
+        {columns.map((col, c) => (
+          <div key={c} className="grid gap-4">
+            {col.map((el) => (
+              <ProjectCard
+                key={el.link}
+                project={el}
+                translateY={translates[c]}
+              />
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -84,13 +67,13 @@ const ProjectCard = ({
       className="group relative overflow-hidden"
     >
       <Link href={project.link} className="block cursor-pointer">
-        <div className="relative aspect-auto">
+        <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100">
           <Image
             src={project.src}
-            className="m-0! h-auto w-full gap-4 object-cover object-top-left p-0! transition-transform duration-500 group-hover:scale-105"
-            height="400"
-            width="400"
             alt={project.name}
+            fill
+            sizes="(min-width: 1024px) 33vw, 50vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
           {/* Overlay */}
           <div className="absolute inset-0 flex flex-col justify-end bg-black/40 p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">

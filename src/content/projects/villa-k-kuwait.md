@@ -4,6 +4,7 @@ description: "Situated on a prominent corner lot within an exclusive private com
 location: "Kuwait"
 category: ""
 order: 7
+heroFit: "full"
 cover: "/images/projects/villa-k/cover.jpg"
 gallery: []
 ---

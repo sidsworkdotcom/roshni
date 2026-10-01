@@ -81,9 +81,19 @@ export default async function ProjectPage({ params }: Props) {
       {/* Hero image */}
       {p.cover && (
         <section className="mb-20 px-6 md:px-12">
-          <div className="mx-auto aspect-[16/9] max-w-7xl overflow-hidden">
-            <img alt={p.title} className="h-full w-full object-cover" src={p.cover} />
-          </div>
+          {p.heroFit === "full" ? (
+            <div className="mx-auto max-w-7xl">
+              <img
+                alt={p.title}
+                className="mx-auto h-auto max-h-[85vh] w-auto max-w-full object-contain"
+                src={p.cover}
+              />
+            </div>
+          ) : (
+            <div className="mx-auto aspect-[16/9] max-w-7xl overflow-hidden">
+              <img alt={p.title} className="h-full w-full object-cover" src={p.cover} />
+            </div>
+          )}
         </section>
       )}
 

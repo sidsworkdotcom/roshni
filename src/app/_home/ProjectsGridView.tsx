@@ -21,13 +21,13 @@ function ProjectCard({ project }: { project: ProjectItem }) {
   return (
     <div className="group bg-charcoal/10 relative overflow-hidden">
       <Link href={project.link} className="block cursor-pointer">
-        <div className="relative h-auto w-full">
+        <div className="relative aspect-[4/5] w-full overflow-hidden">
           <Image
             src={project.src}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
             alt={project.name}
-            width={400}
-            height={400}
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
           />
           {/* Overlay */}
           <div className="absolute inset-0 flex flex-col justify-end bg-black/40 p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">

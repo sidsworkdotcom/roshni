@@ -37,15 +37,27 @@ export default function Gallery({
 
   if (images.length === 0) return null;
 
+  // 1 photo: full-width landscape. 2 photos: two landscape frames. 3+: masonry.
+  const frame =
+    images.length === 1 ? "aspect-[16/9]" : images.length === 2 ? "aspect-[4/3]" : "";
+  const wrapper =
+    images.length === 1
+      ? "grid grid-cols-1 gap-4"
+      : images.length === 2
+        ? "grid grid-cols-1 gap-4 md:grid-cols-2"
+        : "columns-1 gap-4 sm:columns-2 lg:columns-3";
+
   return (
     <>
-      <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
+      <div className={wrapper}>
         {images.map((src, i) => (
           <button
             key={src}
             type="button"
             onClick={() => setOpen(i)}
-            className="mb-4 block w-full cursor-zoom-in overflow-hidden break-inside-avoid"
+            className={`block w-full cursor-zoom-in overflow-hidden ${
+              frame ? frame : "mb-4 break-inside-avoid"
+            }`}
             aria-label={`Open image ${i + 1} of ${images.length}`}
           >
             <img
@@ -53,7 +65,9 @@ export default function Gallery({
               alt={`${title} ${i + 1}`}
               loading="lazy"
               decoding="async"
-              className="h-auto w-full transition-transform duration-700 hover:scale-105"
+              className={`w-full transition-transform duration-700 hover:scale-105 ${
+                frame ? "h-full object-cover" : "h-auto"
+              }`}
             />
           </button>
         ))}
@@ -75,17 +89,19 @@ export default function Gallery({
             <PiX size={32} />
           </button>
 
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              step(-1);
-            }}
-            aria-label="Previous image"
-            className="absolute left-4 text-white/80 transition hover:text-white md:left-8"
-          >
-            <PiCaretLeft size={40} />
-          </button>
+          {images.length > 1 && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                step(-1);
+              }}
+              aria-label="Previous image"
+              className="absolute left-4 text-white/80 transition hover:text-white md:left-8"
+            >
+              <PiCaretLeft size={40} />
+            </button>
+          )}
 
           <img
             src={images[open]}
@@ -94,17 +110,19 @@ export default function Gallery({
             onClick={(e) => e.stopPropagation()}
           />
 
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              step(1);
-            }}
-            aria-label="Next image"
-            className="absolute right-4 text-white/80 transition hover:text-white md:right-8"
-          >
-            <PiCaretRight size={40} />
-          </button>
+          {images.length > 1 && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                step(1);
+              }}
+              aria-label="Next image"
+              className="absolute right-4 text-white/80 transition hover:text-white md:right-8"
+            >
+              <PiCaretRight size={40} />
+            </button>
+          )}
 
           <span className="absolute bottom-6 font-mono text-[10px] tracking-[0.3em] text-white/60 uppercase">
             {open + 1} / {images.length}

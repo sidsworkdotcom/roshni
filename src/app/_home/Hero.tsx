@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import LoadingCarousel from "@/components/ui/loading-carousel";
 import Link from "next/link";
@@ -8,37 +7,17 @@ export default function Hero() {
     <section className="bg-sand-50">
       <div className="flex items-center justify-center px-4 pt-40 pb-10 text-center">
         <div className="relative z-10 max-w-4xl">
-          <Badge>Residential & Wellness Studio</Badge>
-
-          <h1 className="mt-8 mb-12 font-serif text-5xl leading-[1.1] font-light md:text-6xl">
-            Architecture Design guided by{" "}
-            <span className="font-medium italic">Human Biology</span>, not
-            trends.
+          <h1 className="mb-6 font-serif text-5xl leading-[1.1] font-light md:text-6xl">
+            Roshni Studio
           </h1>
+          <p className="text-charcoal/70 mx-auto mb-12 max-w-2xl text-lg leading-relaxed font-light md:text-xl">
+            Residential and wellness architecture and interior design studio.
+          </p>
 
-          {/* <ConsultationOverlay layoutId="hero"> */}
           <Link href="/contact">
             <Button>Book A Consultation</Button>
           </Link>
-          {/* </ConsultationOverlay> */}
         </div>
-
-        {/* <div
-          className="absolute inset-0 z-0"
-          style={{
-            opacity: 0.5,
-            background: "var(--color-sand-50)",
-            backgroundImage: `
-        radial-gradient(
-          circle at top center,
-          var(--color-primary),
-          transparent 70%
-        )
-      `,
-            filter: "blur(80px)",
-            backgroundRepeat: "no-repeat"
-          }}
-        /> */}
 
         <GridBg />
       </div>

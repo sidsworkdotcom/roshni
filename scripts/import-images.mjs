@@ -10,21 +10,31 @@ const IMAGE = /\.(jpe?g|png|webp|avif|tiff?)$/i;
 // Windows drops trailing dots from folder names, so ignore them when matching
 const norm = (s) => s.trim().replace(/\.+$/, "").toLowerCase();
 
-// Drive folder name -> project file name (slug)
-const MAP = Object.fromEntries(
-  Object.entries({
-    "Kuwait House": "villa-k-kuwait",
-    "House in St Johns wood conservation area.": "st-johns-wood-house",
-    "Fulham basement and house renovation": "fulham-basement",
-    "Greenbelt housing": "green-belt-housing",
-    "Tulip Daycare": "nursery-concept",
-    "Pembridge Villas": "pembridge-villas",
-    "Sierra Leone housing": "sierra-leone-housing",
-    "Surf resort": "surf-wellness-retreat",
-    "Hamilton terrace": "hamilton-terrace",
-    "Wellness retreat": "jungle-wellness-retreat"
-  }).map(([k, v]) => [norm(k), v])
-);
+// Drive folder -> project. Several folders can feed one project: they are merged,
+// and files with the same name are only used once. Earlier folders come first.
+const FOLDERS = [
+  ["Fulham basement and house renovation", "fulham-basement"],
+  ["House in St Johns wood conservation area.", "st-johns-wood-house"],
+  ["Circus road", "st-johns-wood-house"],
+  ["Hamilton terrace", "hamilton-terrace"],
+  ["Greenbelt housing", "green-belt-housing"],
+  ["Pembridge Villas", "pembridge-villas"],
+  ["Sierra Leone housing", "sierra-leone-housing"],
+  ["Kuwait House", "villa-k-kuwait"],
+  ["Tulip Daycare", "nursery-concept"],
+  ["Wellness retreat", "jungle-wellness-retreat"],
+  ["Surf resort", "surf-wellness-retreat"]
+];
+const KEYS = new Set(FOLDERS.map(([k]) => norm(k)));
+
+// Which photo should be the cover. Matched against the file name.
+// A file whose name starts with "cover" always wins over these.
+const COVER_HINTS = {
+  "st-johns-wood-house": /rear[ _-]?elevation/i,
+  "green-belt-housing": /greenbelt[ _-]?9/i
+};
+
+const natural = (a, b) => a.localeCompare(b, undefined, { numeric: true });
 
 const subdirs = (d) =>
   fs
@@ -35,7 +45,7 @@ const subdirs = (d) =>
 // Drive zips sometimes add an extra wrapper folder. Step inside it.
 function findRoot(dir) {
   const sub = subdirs(dir);
-  if (sub.some((n) => norm(n) in MAP)) return dir;
+  if (sub.some((n) => KEYS.has(norm(n)))) return dir;
   return sub.length === 1 ? findRoot(path.join(dir, sub[0])) : dir;
 }
 
@@ -52,22 +62,42 @@ if (!fs.existsSync(INCOMING)) {
 }
 
 const root = findRoot(INCOMING);
+const folderNames = subdirs(root);
 
-for (const name of subdirs(root)) {
-  const slug = MAP[norm(name)];
-  if (!slug) {
-    console.log(`skip   "${name}" (no matching project)`);
+for (const name of folderNames) {
+  if (!KEYS.has(norm(name))) console.log(`skip   "${name}" (not a project folder)`);
+}
+
+// Collect files per project, in the order of FOLDERS
+const bySlug = {};
+for (const [label, slug] of FOLDERS) {
+  const actual = folderNames.find((n) => norm(n) === norm(label));
+  if (!actual) {
+    console.log(`note   folder "${label}" was not found in _incoming`);
     continue;
   }
+  const files = walk(path.join(root, actual)).filter((f) => IMAGE.test(f)).sort(natural);
+  (bySlug[slug] ??= []).push(...files);
+}
 
-  const all = walk(path.join(root, name));
-  const files = all
-    .filter((f) => IMAGE.test(f))
-    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
-  const ignored = all.length - files.length;
+for (const [slug, all] of Object.entries(bySlug)) {
+  // Drop duplicates (same file name appearing in two folders)
+  const seen = new Set();
+  const files = all.filter((f) => {
+    const key = path.basename(f).toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  const dupes = all.length - files.length;
 
-  // A file whose name starts with "cover" becomes the cover
-  const cover = files.find((f) => /^cover/i.test(path.basename(f)));
+  let cover = files.find((f) => /^cover/i.test(path.basename(f)));
+  if (!cover && COVER_HINTS[slug]) {
+    cover = files.find((f) => COVER_HINTS[slug].test(path.basename(f)));
+    if (!cover) {
+      console.log(`  ! cover hint not found for ${slug}, using the first image instead`);
+    }
+  }
   const ordered = cover ? [cover, ...files.filter((f) => f !== cover)] : files;
 
   const outDir = path.join(OUT, slug);
@@ -90,7 +120,8 @@ for (const name of subdirs(root)) {
     }
   }
 
+  const coverNote = cover ? `, cover = ${path.basename(cover)}` : "";
   console.log(
-    `done   "${name}" -> ${slug} (${n} images${ignored ? `, ${ignored} non-image files ignored` : ""})`
+    `done   ${slug} (${n} images${coverNote}${dupes ? `, ${dupes} duplicates skipped` : ""})`
   );
 }
